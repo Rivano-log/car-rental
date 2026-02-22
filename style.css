@@ -118,7 +118,7 @@ header {
   top: 0;
   width: 650px;
   z-index: 1;
-  pointer-events: none;
+  
 }
 
 .header__text {
@@ -933,55 +933,45 @@ nav{
   z-index: 999999;
 }
 
+/* ===== NAV MOBILE (<=1024) CLEAN ===== */
 @media (max-width: 1024px){
-  .nav__actions{ display:none; }
+  .nav__actions { display:none; }
+  .nav__hamburger { display:block; margin-left:auto; background:none; border:0; font-size:28px; }
 
-  header{ position: relative; z-index: 1; }
-
-  .nav__hamburger{
-    display:block;
-    margin-left:auto;
-    font-size:28px;
-    cursor:pointer;
-  }
-
-  /* panel */
   .nav__links{
     position: fixed;
     top: 0;
     right: 0;
     height: 100vh;
     width: 280px;
-
-    background:#fff;
+    background: #fff;
     padding: 40px 20px;
-
-    display:flex;
-    flex-direction:column;
-    gap:14px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 
     transform: translateX(110%);
     transition: transform .3s ease;
-     z-index: 2147483647 !important;
-  pointer-events: auto;
-    overflow-y:auto;
+    z-index: 999999;
+
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+
+    /* KEY: dicht = mag GEEN clicks blokkeren */
+    pointer-events: none;
   }
 
   body.open .nav__links{
     transform: translateX(0);
+    pointer-events: auto;
   }
-  .nav__links a{
-  pointer-events: auto;
-  display: block;
-  width: 100%;}
-
 
   .nav__close{
     display:block;
     align-self:flex-end;
+    background:none;
+    border:0;
     font-size:28px;
-    cursor:pointer;
   }
 
   .nav__link{
@@ -989,23 +979,5 @@ nav{
     width:100%;
     padding: 12px 10px;
     border-radius: 10px;
-    color:#111;
-    text-decoration:none;
   }
-
-  .nav__link:active{
-    background:#f2f2f2;
-  }
-}
-*{
-  -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
-}
-
-.nav__hamburger,
-.nav__close,
-.nav__hamburger * ,
-.nav__close *{
-  -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
-  -webkit-touch-callout: none;
-  user-select: none;
 }
