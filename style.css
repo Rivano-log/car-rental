@@ -92,7 +92,10 @@ body {
   font-size: 28px;
   cursor: pointer;
 }
-
+nav button,
+nav a{
+  -webkit-tap-highlight-color: transparent;
+}
 
 /* header */
 header {
@@ -592,47 +595,42 @@ header {
 
 /* Responsive media's */
 
- @media (max-width: 1024px){
-  .banner__title{
-    font-size: 40px;
-    text-align: center;
-  }
+/* ============ NAV: tablet + mobile (<=1024) ============ */
 
-  .banner__para{
-    font-size: 18px;
-    text-align: center;
-    white-space: normal;
-  }
+nav button,
+nav a{
+  -webkit-tap-highlight-color: transparent;
 }
 
+.nav__hamburger:focus,
+.nav__hamburger:active,
+.nav__close:focus,
+.nav__close:active{
+  outline: none;
+  box-shadow: none;
+}
+
+.nav__hamburger i{
+  pointer-events: none;
+}
+
+body.open{
+  overflow: hidden;
+}
+
+/* ============ NAV: tablet + mobile (<=1024) ============ */
 @media (max-width: 1024px){
-  .nav__actions{ display: none; }
+
+  .nav__actions{ display:none; }
 
   .nav__hamburger{
-    display: block;
-    margin-left: auto;
-  }
-}
-
-
-@media (max-width: 768px) {
-
-
-/* navigation */
-  .nav__actions {
-    display: none;
+    display:block;
+    margin-left:auto;
+    -webkit-appearance: none;
+    appearance: none;
   }
 
-  .nav__hamburger {
-    display: block;
-    margin-left: auto;
-    background: none;
-    border: none;
-    font-size: 28px;
-    cursor: pointer;
-  }
-
-  .nav__links {
+  .nav__links{
     position: fixed;
     top: 0;
     right: -100%;
@@ -642,25 +640,37 @@ header {
     padding: 40px 20px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    transition: 0.3s ease;
+    gap: 14px;
+    transition: right .3s ease;
     z-index: 9999;
-    align-items: center;
+    align-items: flex-start;
   }
 
-  body.open .nav__links {
-    right: 0;
+  body.open .nav__links{ right: 0; }
+
+  .nav__close{
+    display:block;
+    align-self:flex-end;
+    background:none;
+    border:none;
+    font-size:28px;
+    cursor:pointer;
   }
 
-  .nav__close {
-    display: block;
-    align-self: flex-end;
-    background: none;
-    border: none;
-    font-size: 28px;
-    cursor: pointer;
-    margin-bottom: 10px;
+  .nav__link{
+    width:100%;
+    font-size: 18px;
+    padding: 12px 10px;
+    border-radius: 10px;
   }
+
+  .nav__link:active{
+    background: #f2f2f2;
+  }
+}
+
+@media (max-width: 768px) {
+
 
 /* header */
 
@@ -918,4 +928,26 @@ header {
     display: none !important;
   }
 
+}
+
+@media (max-width: 1100px){
+
+  .header__img__wrapper,
+  .header-bg{
+    display: none;
+  }
+
+  .header__row{
+    justify-content: center;
+    text-align: center;
+  }
+
+  .header__text{
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .header__text__btns{
+    justify-content: center;
+  }
 }
