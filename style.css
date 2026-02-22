@@ -595,79 +595,7 @@ header {
 
 /* Responsive media's */
 
-/* ============ NAV: tablet + mobile (<=1024) ============ */
 
-nav button,
-nav a{
-  -webkit-tap-highlight-color: transparent;
-}
-
-.nav__hamburger:focus,
-.nav__hamburger:active,
-.nav__close:focus,
-.nav__close:active{
-  outline: none;
-  box-shadow: none;
-}
-
-.nav__hamburger i{
-  pointer-events: none;
-}
-
-body.open{
-  overflow: hidden;
-}
-
-/* ============ NAV: tablet + mobile (<=1024) ============ */
-@media (max-width: 1024px){
-
-  .nav__actions{ display:none; }
-
-  .nav__hamburger{
-    display:block;
-    margin-left:auto;
-    -webkit-appearance: none;
-    appearance: none;
-  }
-
-  .nav__links{
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 280px;
-    height: 100vh;
-    background: #fff;
-    padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    transition: right .3s ease;
-    z-index: 9999;
-    align-items: flex-start;
-  }
-
-  body.open .nav__links{ right: 0; }
-
-  .nav__close{
-    display:block;
-    align-self:flex-end;
-    background:none;
-    border:none;
-    font-size:28px;
-    cursor:pointer;
-  }
-
-  .nav__link{
-    width:100%;
-    font-size: 18px;
-    padding: 12px 10px;
-    border-radius: 10px;
-  }
-
-  .nav__link:active{
-    background: #f2f2f2;
-  }
-}
 
 @media (max-width: 768px) {
 
@@ -970,18 +898,25 @@ body.open{
   line-height: 1.4;
   white-space: normal;     
 }
+/* ===== NAV MOBILE (<=1024) - CLEAN ===== */
 
-/* /* iOS: */
-.nav__hamburger,
-.nav__hamburger * ,
-.nav__close,
-.nav__close *{
-  -webkit-tap-highlight-color: transparent !important;
-  -webkit-touch-callout: none;
-  user-select: none;
+/* iOS tap highlight uit */
+nav, nav *{
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
-/* iOS/Chrome: */
+/* hamburger niet blauw + geen focus ring */
+.nav__hamburger,
+.nav__close{
+  background: none;
+  border: none;
+  color: #111;
+  outline: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 .nav__hamburger:focus,
 .nav__hamburger:active,
 .nav__hamburger:focus-visible,
@@ -990,4 +925,87 @@ body.open{
 .nav__close:focus-visible{
   outline: none !important;
   box-shadow: none !important;
+}
+
+/* BELANGRIJK: nav boven alles */
+nav{
+  position: relative;
+  z-index: 999999;
+}
+
+@media (max-width: 1024px){
+  .nav__actions{ display:none; }
+
+  header{ position: relative; z-index: 1; }
+
+  .nav__hamburger{
+    display:block;
+    margin-left:auto;
+    font-size:28px;
+    cursor:pointer;
+  }
+
+  /* panel */
+  .nav__links{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 280px;
+
+    background:#fff;
+    padding: 40px 20px;
+
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+
+    transform: translateX(110%);
+    transition: transform .3s ease;
+     z-index: 2147483647 !important;
+  pointer-events: auto;
+    overflow-y:auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body.open .nav__links{
+    transform: translateX(0);
+  }
+  .nav__links a{
+  pointer-events: auto;
+  display: block;
+  width: 100%;}
+
+
+  .nav__close{
+    display:block;
+    align-self:flex-end;
+    font-size:28px;
+    cursor:pointer;
+  }
+
+  .nav__link{
+    display:block;
+    width:100%;
+    padding: 12px 10px;
+    border-radius: 10px;
+    color:#111;
+    text-decoration:none;
+  }
+
+  .nav__link:active{
+    background:#f2f2f2;
+  }
+}
+*{
+  -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+}
+
+.nav__hamburger,
+.nav__close,
+.nav__hamburger * ,
+.nav__close *{
+  -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+  -webkit-touch-callout: none;
+  user-select: none;
 }
