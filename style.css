@@ -951,3 +951,43 @@ body.open{
     justify-content: center;
   }
 }
+/* Banner base fix */
+.banner__title,
+.banner__para{
+  display: block;          
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 900px;       
+}
+
+
+.banner__title{
+  line-height: 1.1;
+}
+
+.banner__para{
+  line-height: 1.4;
+  white-space: normal;     
+}
+
+/* /* iOS: */
+.nav__hamburger,
+.nav__hamburger * ,
+.nav__close,
+.nav__close *{
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+/* iOS/Chrome: */
+.nav__hamburger:focus,
+.nav__hamburger:active,
+.nav__hamburger:focus-visible,
+.nav__close:focus,
+.nav__close:active,
+.nav__close:focus-visible{
+  outline: none !important;
+  box-shadow: none !important;
+}
