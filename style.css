@@ -78,7 +78,12 @@ body {
   border: none;
   font-size: 28px;
   cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  appearance: none;
 }
+  
 
 .nav__close {
   display: none;
@@ -320,9 +325,8 @@ header {
   margin-top: 24px;
 }
 
-/* =========================
-   REVIEW
-   ========================= */
+/* review*/
+
 #review {
   background: #f8f8f8;
   padding: 100px 0;
@@ -383,7 +387,7 @@ header {
   gap: 14px;
 }
 
-/* avatar fix */
+
 .review__avatar {
   width: 65px;
   height: 65px;
@@ -410,28 +414,25 @@ header {
   color: #ff4d30;
 }
 
-/* =========================
-   DOWNLOAD (CLEAN TEMPLATE SETUP)
-   ========================= */
+/* download */
 
-/* Section */
+
 #download {
   background-image: url(download-bg.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
   padding: 80px 0;
-  /* jij mag dit houden */
+
 }
 
-/* Center wrapper */
+
 .download__wrapper {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* Layout wrapper (1x gebruiken!) */
 .download__content-inner {
   display: flex;
   justify-content: space-between;
@@ -458,7 +459,7 @@ header {
 
 }
 
-/* Store buttons */
+
 .download__links {
   display: flex;
   gap: 15px;
@@ -471,15 +472,15 @@ header {
   display: block;
 }
 
-/* Rechts: floating phone */
+
 .download__img {
   position: absolute;
   right: 0;
-  /* laat hem op de rechterkant “ankeren” */
+  
   top: 20px;
-  /* naast de tekst starten */
+  
   width: 560px;
-  /* jouw kleinere, betere size */
+  
   transform: translateX(-260px) translateY(160px);
   z-index: 10;
   pointer-events: none;
@@ -492,9 +493,7 @@ header {
 
 
 
-/* =========================
-   FOOTER
-   ========================= */
+/* footer */
 #footer {
   padding: 100px 0;
   position: relative;
@@ -561,9 +560,8 @@ header {
 
 
 
-/* =========================
-   RESPONSIVE (simpel en stabiel)
-   ========================= */
+/* responsive */
+
 @media (max-width: 1000px) {
   .download__content-inner {
     flex-direction: column;
@@ -576,7 +574,7 @@ header {
 
   .download__img {
     position: static;
-    /* phone terug in flow */
+    
     width: 100%;
     margin-top: 40px;
   }
@@ -593,12 +591,34 @@ header {
 
 
 /* Responsive media's */
+
+ @media (max-width: 1024px){
+  .banner__title{
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .banner__para{
+    font-size: 18px;
+    text-align: center;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 1024px){
+  .nav__actions{ display: none; }
+
+  .nav__hamburger{
+    display: block;
+    margin-left: auto;
+  }
+}
+
+
 @media (max-width: 768px) {
 
 
-  /* =========================
-     NAVIGATION
-     ========================= */
+/* navigation */
   .nav__actions {
     display: none;
   }
@@ -642,9 +662,8 @@ header {
     margin-bottom: 10px;
   }
 
-  /* =========================
-     HEADER
-     ========================= */
+/* header */
+
   .header__img__wrapper,
   .header-bg {
     display: none;
@@ -690,9 +709,8 @@ header {
     margin-bottom: 24px;
   }
 
-  /* =========================
-     FEATURES (fix margin-collapse / spacing)
-     ========================= */
+ /* features */
+
   #features {
     padding-top: 20px;
     display: flow-root;
@@ -747,7 +765,7 @@ header {
   }
 
 
-  /* Titel */
+
   #banner .banner__title,
   #banner h2 {
     margin: 0;
@@ -758,14 +776,15 @@ header {
     max-width: 720px;
     text-align: center;
     margin: 0 auto;
-    /* key: voorkomt super brede title */
+  
   }
 
-  /* Para */
+ 
   #banner .banner__para,
   #banner p {
     margin: 12px auto 0;
-    /* i.p.v. 20px */
+    
+  
     font-size: 18px;
     color: rgba(255, 255, 255, 0.85);
     padding: 0px;
