@@ -850,13 +850,16 @@ nav {
     pointer-events: auto;
   }
 
-  .nav__close {
-    display: block;
-    align-self: flex-end;
-    background: none;
-    border: 0;
-    font-size: 28px;
-  }
+.nav__close {
+  display: block;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+
+  background: none;
+  border: 0;
+  font-size: 28px;
+}
 
   .nav__link {
     display: block;
@@ -1094,12 +1097,19 @@ nav {
   background-position: right -60px  bottom;
   background-size: cover;
   background-color: white;
+  background-image: none;
+ 
 }
 
 .download__wrapper {
   padding: 0 24px;
-}
 
+
+}
+.download__content-inner {
+  display: flex;
+  justify-content: center;
+}
   #footer {
     padding: 0;
   }
@@ -1691,6 +1701,8 @@ display: none;
     width: 100%;
     max-width: 100%;
   }
+}.review__para{
+  padding: 0 20px;
 }
 
 
@@ -1720,6 +1732,7 @@ display: none;
   line-height:1.6;
   max-width:100%;
   margin:0 auto 32px;
+  padding: 0 20px;
 }
 
 .testimonials{
