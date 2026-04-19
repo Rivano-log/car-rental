@@ -4,13 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Car rental javascript</title>
-    <link rel="stylesheet" href="models.css" />
-    <script src="index.js"></script>
+    <link rel="stylesheet" href="models.css"  />
+   
     <script src="models.js" defer></script>
-    <script
-      src="https://kit.fontawesome.com/fc0b80239e.js"
-      crossorigin="anonymous"
-    ></script>
+<script src="https://kit.fontawesome.com/9dee79d599.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <nav>
@@ -68,7 +65,7 @@
           <div class="row models__row">
             <div class="models__header">
               <h2 class="models__header__title">Vehicle Models</h2>
-              <select class="models__header__sort" onchange="renderModels()">
+              <select class="models__header__sort" onchange="RenderModels()">
                 <option
                   class="models__header__sort__option"
                   value=""
@@ -94,38 +91,20 @@
                 </option>
               </select>
             </div>
-            <div class="models__list" id="models-list">
-              <div class="model">
-                <img src="assets/model-img.png" alt="" class="model__img" />
-                <div class="model__details model__details-1">
-                  <h3 class="model__details__name">Toyota Camry</h3>
-                  <h4 class="model__details__price">
-                    $25 <span class="model__details__price__span">per day</span>
-                  </h4>
-                </div>
-                <div class="model__details model__details-2">
-                  <div class="model__detail model__detail__rating">
-                    <i class="model__detail__icon fa-solid fa-star"></i>
-                    <span class="model__detail__text">4.5 / 5</span>
-                  </div>
-                  <div class="model__detail model__detail-right">
-                    <i class="model__detail__icon fa-solid fa-car"></i>
-                    <span class="model__detail__text">2023</span>
-                  </div>
-                  <div class="model__detail">
-                    <i class="model__detail__icon fa-solid fa-car"></i>
-                    <span class="model__detail__text">Toyota</span>
-                  </div>
-                  <div class="model__detail model__detail-right">
-                    <i class="model__detail__icon fa-solid fa-car"></i>
-                    <span class="model__detail__text">Manual</span>
-                  </div>
-                </div>
-                <button class="model__btn">
-                  <span class="model__btn__span">Book Ride</span>
-                  <i class="fa-regular fa-circle-check model__btn__icon"></i>
-                </button>
-              </div>
+
+            
+
+<div class="models__spinner-wrapper" id="models-spinner">
+  <i class="fa-solid fa-spinner models__list__spinner"></i>
+</div>
+
+<div class="models__list" id="models-list"></div>
+  
+
+
+
+              
+      
             </div>
           </div>
         </div>

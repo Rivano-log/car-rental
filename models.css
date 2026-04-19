@@ -696,7 +696,7 @@ MODELS PAGE
 /* Hero */
 
 #hero {
-  background-image: url("assets/hero-bg.png");
+  background-image: url(" hero-bg.png");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -858,20 +858,31 @@ MODELS PAGE
   box-shadow: 0 10px 15px 0 rgba(255, 83, 48, 0.5);
 }
 
+.models__spinner-wrapper {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 32px 0;
+}
+
 .models__list__spinner {
+  display: inline-block;
   font-size: 40px;
-  margin: 0 auto;
-  animation: loading-spinner 1000ms infinite;
+  animation: loading-spinner 1000ms linear infinite;
 }
 
 @keyframes loading-spinner {
   0% {
-    rotate: 0deg;
+    transform: rotate(0deg);
   }
-
   100% {
-    rotate: 360deg;
+    transform: rotate(360deg);
   }
+}
+#models-spinner {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 /* XL Screens */
